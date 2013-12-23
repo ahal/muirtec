@@ -1,11 +1,15 @@
 ---
 extends: base.j2
-default_block: main
 title: About MuirTec
 description: The default hyde template
 ---
 
+{% block css -%}
+{{ super() }}
 <link rel="stylesheet" href="{{ media_url('css/about.css') }}">
+{% endblock %}
+
+{% block main -%}
 <img id="about-image" src="{{ media_url('img/about.jpg') }}"/>
 
 {% filter markdown|typogrify -%}
@@ -31,4 +35,4 @@ and practical solution to the tough structural problems.
 <a href="http://www.apegga.org/" target="_blank"><img class="association" src="{{ media_url('img/associations/apegga.gif') }}" alt="Association of Professional Engineers, Geologists, and Geophysicists of Alberta"/></a>
 <a href="http://www.ospe.on.ca/" target="_blank"><img class="association" src="{{ media_url('img/associations/OSPE.gif') }}" alt="Ontario Society of Professional Engineers"/></a>
 </div>
-
+{%- endblock %}
