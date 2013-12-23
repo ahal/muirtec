@@ -1,0 +1,71 @@
+---
+extends: base.j2
+title: MuirTec Services
+description: Services
+---
+
+{% block css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ media_url('css/services.css') }}">
+{% endblock %}
+
+{% block main -%}
+
+<div id="service-list">
+
+{% filter markdown|typogrify -%}
+
+* ![]({{ media_url('img/services/thumb1.jpg') }})
+    <h4>Structural Design</h4>
+    * Structural steel frames for buildings and industrial equipment supports
+    * Structural plate work for tanks and custom vessels
+    * Reinforced concrete and foundations
+    * Structural masonry design
+    * Structural timber
+* ![]({{ media_url('img/services/thumb2.jpg') }})
+    <h4>Construction</h4>
+    * Inspection during construction
+    * Engineering for rigging and heavy lifts
+    * Engineering design for shoring and scaffold
+* ![]({{ media_url('img/services/thumb3.jpg') }})
+    <h4>Restoration</h4>
+    * Structural restoration of buildings and bridges
+    * Concrete restoration for parking structures, balconies, etc.
+* ![]({{ media_url('img/services/thumb4.jpg') }})
+    <h4>Condition Surveys</h4>
+    * Reinforced concrete and steel
+    * Buildings and structural aspect of industrial equipment
+* ![]({{ media_url('img/services/thumb5.jpg') }})
+    <h4>Analysis</h4>
+    * Computer aided finite element analysis and design
+    * Related Services: Architectural, mechanical engineering, electrical engineering,
+                        geotechnical engineering and building science services offered through
+                        association with other known companies and individuals.
+* ![]({{ media_url('img/services/thumb6.jpg') }})
+    <h4>Chimneys and Stacks</h4>
+    * Free standing and guided steel chimneys and stacks
+* ![]({{ media_url('img/services/thumb7.jpg') }})
+    <h4>Industrial and Commercial Buildings</h4>
+    * Industrial Buildings with cranes (new and modifications of existing)
+    * Commercial Buildings (new and modifications of existing)
+* ![]({{ media_url('img/services/thumb8.jpg') }})
+    <h4>Transport Design</h4>
+    * Rigging, heavy lift and transport frame design for large oversize loads
+* ![]({{ media_url('img/services/thumb9.jpg') }})
+    <h4>Bridge Design and Rehabilitation</h4>
+    * Highway and pedestrian bridge design and rehabilitation
+* ![]({{ media_url('img/services/thumb10.jpg') }})
+    <h4>Pollution Control</h4>
+    * Structural design of large Pollution Control equipment (precipitators, scrubbers, venturi, duct work, etc.) and their support steel
+* ![]({{ media_url('img/services/thumb11.jpg') }})
+    <h4>Tanks and Water Control</h4>
+    * Tanks and vessels under 15 psi
+    * Design of water control gates in dams, hoist towers, trash racks, road decks
+* ![]({{ media_url('img/services/thumb12.jpg') }})
+    <h4>Crane Design and Repair</h4>
+    * Crane repair design and load test supervision
+    * Construction engineering design
+{%- endfilter %}
+
+</div>
+{%- endblock %}

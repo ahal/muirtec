@@ -1,0 +1,17 @@
+.association {
+    max-height: 50px;
+    max-width: 170px;
+}
+
+#association-container {
+    margin-top: 40px;
+}
+
+#about-image {
+    width: 400px;
+    height: auto;
+    float: left;
+    margin-right: 25px;
+    border: 1px solid #14396a;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}

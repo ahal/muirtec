@@ -1,0 +1,32 @@
+---
+extends: base.j2
+title: Contact Us
+description: Contact Us
+---
+
+{% block css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ media_url('css/contact.css') }}">
+{% endblock %}
+
+{% block main %}
+<div id="map">
+    <iframe width="350" height="350" frameborder="0" scrolling="no" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=muirtec&amp;aq=&amp;sll=43.430434,-80.476315&amp;sspn=0.518093,1.056747&amp;t=m&amp;ie=UTF8&amp;hq=muirtec&amp;hnear=&amp;ll=43.461891,-80.520515&amp;spn=0.087218,0.145912&amp;z=12&amp;output=embed"></iframe>
+</div>
+
+<h4>MuirTec Inc.</h4>
+<pre>
+37 Allen Street West
+Waterloo, ON
+N2L 1C9
+Canada
+(519) 746-6368
+<a href="mailto:info@muirtec.com">info@muirtec.com</a>
+</pre>
+<br/>
+<h4>Hours of Operation</h4>
+<pre>
+Monday to Friday
+9:00am - 5:00pm    
+</pre>
+{% endblock %}
