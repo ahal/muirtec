@@ -1,1 +1,1 @@
-Basic template for hyde.
+### Serve locally    $ pip install hyde    $ hyde gen    $ hyde serveA webserver will be running on http://localhost:8080
