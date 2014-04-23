@@ -1,4 +1,4 @@
-#service-list ul {
+#service-list > ul {
     list-style-type: none;
 }
  
@@ -12,9 +12,13 @@
     border-bottom: 1px solid #d7d7d7;
 }
 
-#service-list > ul > li > img {
+.service-content > img {
     float: left;
-    margin: 0 15px 0 0;
+    margin-right: 15px;
     border: 1px solid #14396a;
     box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.service-content > p {
+    overflow: hidden;
 }
