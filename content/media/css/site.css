@@ -60,10 +60,9 @@ body{
     font-family: 'Muli', sans-serif;
     font-size: 95%;
     color: #102E55;
-    background-color: #efefef;
+    background-color: rgb(241, 247, 255);
     padding: 0;
     margin: 0;
-    text-shadow: 0px 2px 0px #efefef;
 }
 
 #container{
@@ -188,6 +187,7 @@ footer{
 section.content{
     padding: 25px;
     margin: 25px 0;
+    background-color: rgb(240, 241, 248);
     -moz-box-shadow: 0px 4px 12px #ccc; /* FF3.5+ */
     -webkit-box-shadow: 0px 4px 12px #ccc; /* Saf3.0+, Chrome */
     box-shadow: 0px 4px 12px #ccc; /* Opera 10.5, IE 9.0 */
