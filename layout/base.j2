@@ -38,6 +38,7 @@
   {% endblock favicons %}
 
   {% block css %}
+  <link rel="stylesheet" href="{{ media_url('css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/site.css') }}">
   <link rel="stylesheet" href="{{ media_url('css/syntax.css') }}">
   {% endblock css %}
@@ -50,56 +51,50 @@
   {% block endhead %}{% endblock endhead %}
 </head>
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
-  {% block content %}
-  <div id="container">
-      {% block container %}
-      <div id="main" role="main">
-          <header class="banner clearfix">
-          {% block header -%}
-            <img id="logo" src="{{ media_url('img/logo.png') }}"/>
-            <p id="logo-footer">Structural Consulting Engineers</span>
-            <!--<h1>MuirTec Inc.</h1>
-            <h3>We design solutions</h3>--!>
-          {%- endblock %}
-          {% block nav %}
-          {% from "macros.j2" import render_nav with context %}
-          {{ render_nav(menu, 'main_nav') }}
-          {% endblock %}
-          </header>
-          <section class="content">
-          {% block main %}
-          {% endblock main %}
-          </section>
-      </div>
-    {% endblock container %}
-  </div> <!--! end of #container -->
-  <footer>
-    {% block footer %}
-    <p>&copy; MuirTec Inc. 2013</p>
-    {% endblock footer %}
-  </footer>
-  {% endblock content%}
-  {% block js %}
-  <!-- Javascript at the bottom for fast page loading -->
-  {% block jquery %}
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.10.2.min.js">\x3C/script>')</script>
-  {% endblock jquery %}
+    {% block content %}
+    <div class="container">
+        {% block container %}
+            <div class="header clearfix">
+            {% block header -%}
+                {% from "macros.j2" import render_nav with context %}
+                {{ render_nav(menu, 'nav nav-pills pull-right') }}
+            {%- endblock %}
+            </div>
 
-  {% block scripts %}
-  {% endblock scripts %}
+            <section class="content">
+            {% block main %}
+            {% endblock main %}
+            </section>
+        {% endblock container %}
+    </div> <!--! end of #container -->
+    <footer>
+      {% block footer %}
+      <p>&copy; MuirTec Inc. 2013</p>
+      {% endblock footer %}
+    </footer>
+    {% endblock content%}
+    {% block js %}
+    <!-- Javascript at the bottom for fast page loading -->
+    {% block jquery %}
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.10.2.min.js">\x3C/script>')</script>
+    {% endblock jquery %}
+
+    {% block scripts %}
+    <script src="{{ media_url('js/libs/bootstrap.min.js') }}"></script>
+    {% endblock scripts %}
 
 
-  <!--[if lt IE 7 ]>
-    <script src="js/libs/dd_belatedpng.js"></script>
-    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
-  <![endif]-->
+    <!--[if lt IE 7 ]>
+      <script src="js/libs/dd_belatedpng.js"></script>
+      <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+    <![endif]-->
 
-  {% block analytics %}
-  {% include "analytics.j2" %}
-  {% endblock analytics %}
+    {% block analytics %}
+    {% include "analytics.j2" %}
+    {% endblock analytics %}
 
-  {% endblock js %}
+    {% endblock js %}
 </body>
 </html>

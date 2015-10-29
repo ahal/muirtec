@@ -12,8 +12,9 @@
 
 {% macro render_nav(menu, cls=None) -%}
 {% if menu -%}
-<nav {{'class='~cls if cls }}>
-    <ul>
+<img id="logo" class="media-object" src="{{ media_url('img/logo.png') }}"></img>
+<nav>
+    <ul class="{{ cls }}">
         {% for item in menu -%}
         {% set active = False -%}
         {% if item.type == 'page' -%}
@@ -26,9 +27,8 @@
         {% set classes = ['button'] -%}
         {% do classes.append('active') if active -%}
         {% do classes.append(item.css_class) if item.css_class -%}
-        <li>
+        <li role="presentation" class="{{ classes|join(' ') }}">
             <a title="{{ item.description }}"
-                class="{{ classes|join(' ') }}"
                 href="{{ content_url(item.url) }}">
                 {{ item.name }}
             </a>
@@ -36,5 +36,26 @@
         {%- endfor %}
     </ul>
 </nav>
+<h4 id="logo-subtext">Structural Consulting Engineers</h4>
+{%- endif %}
+{%- endmacro %}
+
+{% macro render_services(services) -%}
+{% if services -%}
+<div class="service-list">
+    {% for item in services -%}
+        <div class="media">
+            <div class="media-left">
+                <img class="media-object" src="{{ media_url(item.img) }}"></img>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{ item.title }}</h4>
+                {% filter markdown|typogrify -%}
+                {{ item.description }}
+                {%- endfilter %}
+            </div>
+        </div>
+    {%- endfor %}
+</div>
 {%- endif %}
 {%- endmacro %}
