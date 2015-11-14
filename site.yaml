@@ -88,6 +88,12 @@ context:
                     building science services offered through association with other known companies and
                     individuals.
                 img: img/services/thumb14.jpg
+        carousel:
+            - img/slideshow/slide1.jpg
+            - img/slideshow/slide2.jpg
+            - img/slideshow/slide3.jpg
+            - img/slideshow/slide4.jpg
+            - img/slideshow/slide5.jpg
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00

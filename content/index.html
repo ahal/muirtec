@@ -17,33 +17,8 @@ description: We design solutions
 {% block main -%}
 
 <!-- carousel slideshow -->
-<div id="slideshow" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#slideshow" data-slide-to="0" class="active"></li>
-        <li data-target="#slideshow" data-slide-to="1"></li>
-        <li data-target="#slideshow" data-slide-to="2"></li>
-        <li data-target="#slideshow" data-slide-to="3"></li>
-        <li data-target="#slideshow" data-slide-to="4"></li>
-    </ol>
-
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="{{ media_url('img/slideshow/slide1.jpg') }}" alt="Your time in good hands"/>
-        </div>
-        <div class="item">
-            <img src="{{ media_url('img/slideshow/slide2.jpg') }}" alt="Your time in good hands"/>
-        </div>
-        <div class="item">
-            <img src="{{ media_url('img/slideshow/slide3.jpg') }}" alt="Your time in good hands"/>
-        </div>
-        <div class="item">
-            <img src="{{ media_url('img/slideshow/slide4.jpg') }}" alt="Your time in good hands"/>
-        </div>
-        <div class="item">
-            <img src="{{ media_url('img/slideshow/slide5.jpg') }}" alt="Your time in good hands"/>
-        </div>
-    </div>
-</div>
+{% from "macros.j2" import render_carousel with context %}
+{{ render_carousel(carousel) }}
 
 <p id="catchphrase">
 At MuirTec we design solutions.

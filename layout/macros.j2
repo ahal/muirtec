@@ -59,3 +59,23 @@
 </div>
 {%- endif %}
 {%- endmacro %}
+
+{% macro render_carousel(carousel) -%}
+{% if carousel -%}
+<div id="slideshow" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for image in carousel -%}
+        <li data-target="#slideshow" data-slide-to="{{ loop.index }}"{{ ' class="active"' if loop.first }}></li>
+        {%- endfor %}
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+        {% for image in carousel -%}
+            <div class="item{{ ' active' if loop.first }}">
+                <img src="{{ media_url(image) }}" alt="Your time in good hands"/>
+            </div>
+        {%- endfor %}
+    </div>
+</div>
+{%- endif %}
+{%- endmacro %}
