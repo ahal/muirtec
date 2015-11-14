@@ -6,7 +6,7 @@ description: We design solutions
 
 {% block css %}
 {{ super() }}
-<link rel="stylesheet" href="{{ media_url('css/home.css') }}">
+<link rel="stylesheet" href="{{ media_url('css/services.css') }}">
 {% endblock %}
 
 {% block js %}
@@ -62,5 +62,8 @@ Our services have been used by architects, building contractors,
 developers, local municipalities, larger government bodies and
 more.
 {%- endfilter %}
+
+{% from "macros.j2" import render_services with context %}
+{{ render_services(services) }}
 
 {%- endblock %}

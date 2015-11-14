@@ -14,15 +14,10 @@ context:
         tweet_via: ringce
         menu:
             -
-                name: Home
-                description: Home Page
-                type: page
-                url: index.html
-            -
                 name: Services
                 description: Services 
                 type: page
-                url: services.html
+                url: index.html
             -
                 name: Careers
                 description: Careers
