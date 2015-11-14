@@ -5,23 +5,29 @@ body {
 
 .container {
     max-width: 800px;
-    padding: 20px 0 20px 0;
 }
 
-.content {
-    min-height: 200px;
+.content:first-child {
+    padding: 40px 0 30px 0;
+}
+
+.content:not(:first-child) {
+    padding: 100px 0 100px 0;
 }
 
 .header {
-    margin-bottom: 30px;
-    margin-top: 30px;
-    padding-bottom: 20px;
+    height: 100%;
 }
 
 .header h4 {
     margin-top: 0;
     margin-bottom: 0;
     line-height: 40px;
+}
+
+.header > .logo {
+    margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 .nav-pills > li > a {
@@ -34,11 +40,12 @@ body {
 }
 
 #logo {
-    max-width: 250px;
+    max-width: 400px;
 }
 
 #logo-subtext {
-    color: #283B68;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 footer {

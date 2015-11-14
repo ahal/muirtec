@@ -13,30 +13,34 @@
 
 {% macro render_nav(menu, cls=None) -%}
 {% if menu -%}
-<img id="logo" class="media-object" src="{{ media_url('img/logo.png') }}"></img>
-<nav>
-    <ul class="{{ cls }}">
-        {% for item in menu -%}
-        {% set active = False -%}
-        {% if item.type == 'page' -%}
-            {% set active = (resource.url ==
-                site.content.resource_from_relative_path(item.url).url) -%}
-        {% else -%}
-            {% set active = (node ==
-                site.content.node_from_relative_path(item.url)) -%}
-        {%- endif %}
-        {% set classes = ['button'] -%}
-        {% do classes.append('active') if active -%}
-        {% do classes.append(item.css_class) if item.css_class -%}
-        <li role="presentation" class="{{ classes|join(' ') }}">
-            <a title="{{ item.description }}"
-                href="{{ content_url(item.url) }}">
-                {{ item.name }}
-            </a>
-        </li>
-        {%- endfor %}
-    </ul>
-</nav>
-<h4 id="logo-subtext">Structural Consulting Engineers</h4>
+<div class="logo">
+    <img id="logo" class="media-object" src="{{ media_url('img/logo.png') }}"></img>
+    <h4 id="logo-subtext">Structural Consulting Engineers</h4>
+</div>
+<div class="nav">
+    <nav>
+        <ul class="{{ cls }}">
+            {% for item in menu -%}
+            {% set active = False -%}
+            {% if item.type == 'page' -%}
+                {% set active = (resource.url ==
+                    site.content.resource_from_relative_path(item.url).url) -%}
+            {% else -%}
+                {% set active = (node ==
+                    site.content.node_from_relative_path(item.url)) -%}
+            {%- endif %}
+            {% set classes = ['button'] -%}
+            {% do classes.append('active') if active -%}
+            {% do classes.append(item.css_class) if item.css_class -%}
+            <li role="presentation" class="{{ classes|join(' ') }}">
+                <a title="{{ item.description }}"
+                    href="{{ content_url(item.url) }}">
+                    {{ item.name }}
+                </a>
+            </li>
+            {%- endfor %}
+        </ul>
+    </nav>
+</div>
 {%- endif %}
 {%- endmacro %}

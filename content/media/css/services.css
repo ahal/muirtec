@@ -1,17 +1,32 @@
-#catchphrase {
-    font-size: 125%;
-    font-style: bold;
+#blurb > p:first-child {
+    font-size: 210%;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+}
+
+#blurb > p:not(:first-child) {
+    font-size: 120%;
+}
+
+#blurb > p:nth-child(n + 3) {
+    padding-top: 10px;
+}
+
+#slideshow {
+    float: left;
+    margin-right: 40px;
+    width: 400px;
 }
 
 #slideshow img {
     width: 100%;
-    height: 400px;
 }
 
 .content:nth-child(2n) {
     background-color: #283B68;
     color: lightgrey;
+}
+
+.content:nth-child(2n + 1) {
+    color: #283B68;
 }
