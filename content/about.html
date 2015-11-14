@@ -9,7 +9,8 @@ description: The default hyde template
 <link rel="stylesheet" href="{{ media_url('css/about.css') }}">
 {% endblock %}
 
-{% block main -%}
+{% block main_inside -%}
+<div class="container">
 <img id="about-image" src="{{ media_url('img/about.jpg') }}"/>
 
 {% filter markdown|typogrify -%}
@@ -28,11 +29,12 @@ and practical solution to the tough structural problems.
 {%- endfilter %}
 
 <div id="association-container">
-<h4>Associated Organizations</h4>
-<a href="http://www.apegs.sk.ca/" target="_blank"><img class="association" src="{{ media_url('img/associations/apegs.gif') }}" alt="Association of Professional Engineers and Geoscientists of Saskatchewan"/></a>
-<a href="http://www.peo.on.ca/" target="_blank"><img class="association" src="{{ media_url('img/associations/PEO.gif') }}" alt="Professional Engineers of Ontario" /></a>
-<a href="http://www.apeg.bc.ca/" target="_blank"><img class="association" src="{{ media_url('img/associations/apegtl.gif') }}" alt="Association of Professional Engineers and Geoscientists of British Columbia"/></a>
-<a href="http://www.apegga.org/" target="_blank"><img class="association" src="{{ media_url('img/associations/apegga.gif') }}" alt="Association of Professional Engineers, Geologists, and Geophysicists of Alberta"/></a>
-<a href="http://www.ospe.on.ca/" target="_blank"><img class="association" src="{{ media_url('img/associations/OSPE.gif') }}" alt="Ontario Society of Professional Engineers"/></a>
+    <h4>Associated Organizations</h4>
+    <a href="http://www.apegs.sk.ca/" target="_blank"><img class="association" src="{{ media_url('img/associations/apegs.gif') }}" alt="Association of Professional Engineers and Geoscientists of Saskatchewan"/></a>
+    <a href="http://www.peo.on.ca/" target="_blank"><img class="association" src="{{ media_url('img/associations/PEO.gif') }}" alt="Professional Engineers of Ontario" /></a>
+    <a href="http://www.apeg.bc.ca/" target="_blank"><img class="association" src="{{ media_url('img/associations/apegtl.gif') }}" alt="Association of Professional Engineers and Geoscientists of British Columbia"/></a>
+    <a href="http://www.apegga.org/" target="_blank"><img class="association" src="{{ media_url('img/associations/apegga.gif') }}" alt="Association of Professional Engineers, Geologists, and Geophysicists of Alberta"/></a>
+    <a href="http://www.ospe.on.ca/" target="_blank"><img class="association" src="{{ media_url('img/associations/OSPE.gif') }}" alt="Ontario Society of Professional Engineers"/></a>
+</div>
 </div>
 {%- endblock %}

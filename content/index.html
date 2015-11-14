@@ -14,29 +14,55 @@ description: We design solutions
 <script src="{{ media_url('js/slideshow.js') }}"></script>
 {% endblock %}
 
-{% block main -%}
+{% block main_outside %}
+<section class="content">
+    <div class="container">
+        <!-- carousel slideshow -->
+        <div id="slideshow" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                {% for image in carousel -%}
+                <li data-target="#slideshow" data-slide-to="{{ loop.index }}"{{ ' class="active"' if loop.first }}></li>
+                {%- endfor %}
+            </ol>
 
-<!-- carousel slideshow -->
-{% from "macros.j2" import render_carousel with context %}
-{{ render_carousel(carousel) }}
+            <div class="carousel-inner" role="listbox">
+                {% for image in carousel -%}
+                    <div class="item{{ ' active' if loop.first }}">
+                        <img src="{{ media_url(image) }}" alt="Your time in good hands"/>
+                    </div>
+                {%- endfor %}
+            </div>
+        </div>
 
-<p id="catchphrase">
-At MuirTec we design solutions.
-</p>
+        <div id="blurb">
+            <p id="catchphrase">
+            At MuirTec we design solutions.
+            </p>
 
-{% filter markdown|typogrify -%}
+            {% filter markdown|typogrify -%}
+            {{ blurb }}
+            {%- endfilter %}
+        </div>
+    </div>
+</section>
 
-MuirTec Inc. provides quality structural and civil engineering
-services. We work on small or large scale projects for residential,
-industrial, and municipal clients. We are able to adapt and rise to
-the challenges of any project, regardless of size or complexity.
-
-Our services have been used by architects, building contractors,
-developers, local municipalities, larger government bodies and
-more.
-{%- endfilter %}
-
-{% from "macros.j2" import render_services with context %}
-{{ render_services(services) }}
+<!-- services -->
+{% for item in services -%}
+<section class="content">
+    <div class="container">
+        <div class="media">
+            <div class="media-left">
+                <img class="media-object" src="{{ media_url(item.img) }}"></img>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{ item.title }}</h4>
+                {% filter markdown|typogrify -%}
+                {{ item.description }}
+                {%- endfilter %}
+            </div>
+        </div>
+    </div>
+</section>
+{%- endfor %}
 
 {%- endblock %}

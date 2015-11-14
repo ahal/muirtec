@@ -5,11 +5,16 @@ body {
 
 .container {
     max-width: 800px;
+    padding: 20px 0 20px 0;
+}
+
+.content {
+    min-height: 200px;
 }
 
 .header {
-    border-bottom: 1px solid #E5E5E5;
     margin-bottom: 30px;
+    margin-top: 30px;
     padding-bottom: 20px;
 }
 
@@ -29,14 +34,14 @@ body {
 }
 
 #logo {
-    max-width: 175px;
+    max-width: 250px;
 }
 
 #logo-subtext {
     color: #283B68;
 }
 
-footer{
+footer {
     font-size: 10px;
     text-align: center;
     margin-top: 20px;

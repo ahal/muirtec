@@ -33,6 +33,17 @@ context:
                 description: About
                 type: page
                 url: about.html
+        blurb:
+        > 
+          MuirTec Inc. provides quality structural and civil engineering
+          services. We work on small or large scale projects for residential,
+          industrial, and municipal clients. We are able to adapt and rise to
+          the challenges of any project, regardless of size or complexity.
+
+          Our services have been used by architects, building contractors,
+          developers, local municipalities, larger government bodies and
+          more.
+
         services:
             -
                 title: Structural Design
